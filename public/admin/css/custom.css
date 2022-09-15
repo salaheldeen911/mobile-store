@@ -1,0 +1,199 @@
+html{
+    overflow-x: hidden;
+}
+
+.bg-dark{
+    background-color: #44121d !important;;
+}
+
+.active{
+    color: #3a8dcd;
+}
+
+#addBtn{
+    display: inline;
+    font-weight: 900;
+    color: #44121d;
+}
+
+.navbar {
+    border-radius: 0px;
+    margin: 0;
+
+}
+
+.fa-thumbs-up{
+    transition: color .3s ease;
+    font-size: 1.5em;
+    color: gray
+}
+
+.fa-thumbs-up:hover{
+    color: midnightblue;
+    transform: scale(1.1);
+}
+
+.liked{
+    color: midnightblue;
+    transform: scale(1.1);
+}
+
+.likes-num{
+    padding: 0 5px;
+    font-weight: 900;
+    /* display: none; */
+}
+
+.like{
+    position: absolute;
+    z-index: 1000;
+    cursor: pointer;
+    bottom: 60px;
+    right: 40px;
+}
+
+.delete-product{
+    position: absolute;
+    bottom: 50px;
+    right: 150px;
+}
+
+.like-erorr{
+    position: absolute;
+    right: -15px;
+    bottom: -24px;
+    padding: 0px 8px;
+    background: beige;
+    border-radius: 4px;
+    font-size: 15px;
+    width: max-content;
+    display: none;
+}
+
+.navbar{
+    position: unset;
+}
+
+.bg-dark {
+    background-color: #343a40!important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #52111d;
+}
+
+.show-images-container {
+    width: 100%;
+    background: transparent;
+    height: 200px;
+    border: 2px solid #343957;
+    border-radius: 30px;
+    display: flex;
+}
+
+#mainImage{
+    width: 25%;
+}
+
+.erorr-required-img{
+    margin: 5px auto;
+    background: wheat;
+    padding: 5px 15px;
+    border-radius: 30px;
+    display: none;;   
+}
+
+.main-image{
+    cursor: pointer;
+    display: block;
+    margin: 3px;
+    background: darkseagreen;
+    padding: 2px;
+    border-radius: 230px;
+    width: 100%;
+    text-align: center;
+}
+
+.image{
+    width: 25%;
+    margin: 0 5px;
+}
+
+.delete-icon{
+    text-align:center;
+    font-size: 20px;
+    color: red;
+    cursor: pointer;
+}
+
+.sub-image-holder , .main-image-holder{
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+
+.img-label{
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: gray;
+    margin: 4px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.image-input{
+    width: 0;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    position: absolute;
+}
+
+.sub-image-holder img , .main-image-holder img{
+    width: 100%;
+    height: 85%;
+    border-radius: 15px 15px 15px 0;
+}
+
+input[type = 'file']{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+
+}
+
+.upload-image{
+    width: 150px;
+    background: grey;
+    text-align: center;
+    border-radius: 30px;
+    padding: 6px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+th{
+    text-align: center !important;
+}
+
+table.dataTable thead th, table.dataTable thead td{
+    border-bottom: 0;
+}
+
+table.dataTable.no-footer{
+    border-bottom: 0;
+}
+
+.w-100{
+    width: 100%;
+}
+
+#row-select_wrapper{
+    display: inline !important;
+}
+
+.form-control.input-sm{
+    margin: 0 5px;
+}

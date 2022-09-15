@@ -1,0 +1,9 @@
+/* .view-btn, .edit-btn, .delete-btn{
+    display: flex;
+    width: 25%;
+    float: left;
+    margin: 3px;
+} */
+th{
+    text-align: center !important;
+}
