@@ -7,8 +7,6 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Product;
 use App\Models\Cart;
-use App\Models\CartProduct;
-
 use App\Models\User;
 use App\Models\Address;
 use App\Models\Brand;
@@ -35,11 +33,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Admin routs
-        // View::composer(["admin.products.create", "admin.products.edit", "user.products.index"], function ($view) {
-        //     $view->with('product_details', new Product);
-        // });
-
         View::composer(["admin.site.slider.index"], function ($view) {
             $products = Product::all();
             $sliders = Slider::all();
@@ -58,7 +51,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
 
-        // User routs
+        // User routes
         View::composer(["/", "user.home", "user.checkout", "user.cart"], function ($view) {
             $view->with('products', Product::class);
         });

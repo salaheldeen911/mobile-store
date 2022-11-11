@@ -13,7 +13,7 @@ class FilterController extends Controller
     public function filter(Request $request)
     {
         $products =  ProductsSearch::apply($request);
-        return view('user.products.index')->with(['products' => $products, "response" => $request->all()]);
+        return view('user.products.index')->with(['products' => $products, "response" => $request->all(), "product_details" => new Product()]);
     }
 
     public function brand($brand)
