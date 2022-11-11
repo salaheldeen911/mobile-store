@@ -36,20 +36,20 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // Admin routs
-        View::composer(["admin.products.create", "admin.products.edit", "user.products.index"], function ($view) {
-            $view->with('product_details', new Product);
-        });
+        // View::composer(["admin.products.create", "admin.products.edit", "user.products.index"], function ($view) {
+        //     $view->with('product_details', new Product);
+        // });
 
         View::composer(["admin.site.slider.index"], function ($view) {
             $products = Product::all();
             $sliders = Slider::all();
-            $view->with(['products'=> $products, 'sliders'=> $sliders]);
+            $view->with(['products' => $products, 'sliders' => $sliders]);
         });
 
         View::composer(["admin.site.brand.index"], function ($view) {
             $brands = Brand::all();
             $allBrands = Product::getAllProductBrands();
-            $view->with(['allBrands'=> $allBrands, "brands"=> $brands]);
+            $view->with(['allBrands' => $allBrands, "brands" => $brands]);
         });
 
         View::composer("user.orders", function ($view) {
@@ -57,7 +57,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('addresses', Address::class);
         });
 
-        
+
         // User routs
         View::composer(["/", "user.home", "user.checkout", "user.cart"], function ($view) {
             $view->with('products', Product::class);
@@ -67,7 +67,7 @@ class AppServiceProvider extends ServiceProvider
             $brands = Brand::all();
             $sliders = Slider::all();
 
-            $view->with(['likes'=> Like::class, 'sliders'=> $sliders, 'brands'=> $brands]);
+            $view->with(['likes' => Like::class, 'sliders' => $sliders, 'brands' => $brands]);
         });
 
         View::composer(["user.products.show"], function ($view) {
@@ -77,8 +77,7 @@ class AppServiceProvider extends ServiceProvider
         View::composer("*", function ($view) {
             if (Auth::check()) {
                 $cart = Cart::where('user_id', Auth::user()->id)->first();
-                $user = auth()->user();
-                $view->with(['cart' => $cart, "user" => $user]);
+                $view->with('cart', $cart);
             }
         });
 

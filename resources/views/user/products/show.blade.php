@@ -397,14 +397,17 @@ onclick="alert('Please Login to add to cart')" @endguest type="submit"
                                     @foreach ($product->ratings as $rate)
                                         <div class="row">
                                             <div class="customer-reviews">
-                                                <div class="delete">
-                                                    <i class="fa fa-close"></i>
-                                                    <form action="{{ route('rating.destroy', $rate->id) }} "
-                                                        method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                    </form>
-                                                </div>
+                                                @if ($rate->user_id === auth()->user()->id)
+                                                    <div class="delete">
+                                                        <i class="fa fa-close"></i>
+                                                        <form action="{{ route('rating.destroy', $rate->id) }} "
+                                                            method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                        </form>
+                                                    </div>
+                                                @endif
+
                                                 <div class="flex">
                                                     <div data-rate="{{ $rate->rating }}" class="product-rating rated">
                                                         <span><i class="fa "></i></span>
@@ -414,7 +417,7 @@ onclick="alert('Please Login to add to cart')" @endguest type="submit"
                                                         <span><i class="fa "></i></span>
                                                     </div>
                                                     <p class="reviews-text">By <span class="text-default">
-                                                            {{ $user::where('id', $rate->user_id)->first()->name }}
+                                                            {{ auth()->user()->where('id', $rate->user_id)->first()->name }}
                                                         </span> from
                                                         {{ $rate->created_at->diffForHumans() }} </p>
                                                 </div>

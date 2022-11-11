@@ -111,7 +111,7 @@
                                             <li>
                                                 <label>
                                                     <input name='category[]' value='{{ $key }}' type="checkbox"
-                                                        {{ @$response['category'][$key] ? 'checked' : '' }}>
+                                                        {{ @$response['category'][$key - 1] ? 'checked' : '' }}>
                                                     <span class="checkbox-list">{{ $category }} </span>
                                                 </label>
 
@@ -234,7 +234,7 @@
                                         <div class="product-content">
                                             <h5>
                                                 <a href="{{ route('show.product', $product->id) }}" class="product-title">
-                                                    <span>{{ $product->brand . ' ' . $product->name }}</span>
+                                                    <span>{{ $product->name }}</span>
                                                     <strong>({{ $product->storage }},{{ $product->color }})</strong>
                                                 </a>
                                             </h5>

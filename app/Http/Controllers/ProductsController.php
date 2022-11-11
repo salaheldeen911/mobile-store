@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class productsController extends Controller
+class ProductsController extends Controller
 {
     public function index()
     {
-        $products = Product::paginate(6);
-        return view("user.products.index")->with("products", $products);
+        $products = Product::inRandomOrder()->paginate(6);
+        return view("user.products.index")->with(["products" => $products, "product_details" => new Product()]);
     }
 
     public function show($id)

@@ -19,8 +19,9 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if( !Auth::user()->hasRole('admin') || !Auth::user()->hasRole('seller')){
-            abort(403);
+        if (!Auth::user()->hasRole('admin')) {
+            abort(403, "Not Allowed.");
+            exit;
         }
         return $next($request);
     }

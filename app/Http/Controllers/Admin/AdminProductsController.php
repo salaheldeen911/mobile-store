@@ -40,7 +40,7 @@ class AdminProductsController extends Controller
      */
     public function create()
     {
-        return view("admin.products.create");
+        return view("admin.products.create")->with("product_details", new Product());
     }
 
     /**
@@ -77,7 +77,8 @@ class AdminProductsController extends Controller
      */
     public function edit(Product $product)
     {
-        return view("admin.products.edit")->with("product", $product);
+        return view("admin.products.edit")
+            ->with(["product" => $product, "product_details" => new Product()]);
     }
 
     /**
