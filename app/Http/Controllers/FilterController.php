@@ -15,11 +15,4 @@ class FilterController extends Controller
         $products =  ProductsSearch::apply($request);
         return view('user.products.index')->with(['products' => $products, "response" => $request->all(), "product_details" => new Product()]);
     }
-
-    public function brand($brand)
-    {
-        $products = Product::where('brand', $brand)->paginate(4);
-
-        return view('user.products.index')->with('products', $products);
-    }
 }

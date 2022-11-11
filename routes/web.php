@@ -32,7 +32,6 @@ Route::group(['middleware' => ['user']], function () {
     })->middleware(RedirectIfAuthenticated::class)->name('welcome');
 
     Route::get('/filter', [FilterController::class, 'filter'])->name('filter');
-    Route::get('/filter/{brand}', [FilterController::class, 'brand'])->name('brand');
 
     Route::get('about-us', [HomeController::class, 'aboutUs'])->name('about-us');
 

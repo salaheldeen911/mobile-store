@@ -161,8 +161,9 @@
                             class="{{ $brand->brand_order == 2 ? 'col-lg-6 col-md-6' : 'col-lg-3 col-md-3' }} col-sm-12 col-xs-12">
                             <div class="showcase-block {{ $brand->brand_order == 2 ? 'active big_brand' : '' }}">
                                 <div class="display-logo ">
-                                    <a href="filter/{{ $brand->brand }}"> <img style="max-height: 100%"
-                                            src="{{ $brand->brand_lable_image_path }}" alt=""></a>
+                                    <a href="{{ route('filter', ['brand' => [$brand->brand]]) }}"> <img
+                                            style="max-height: 100%" src="{{ $brand->brand_lable_image_path }}"
+                                            alt=""></a>
                                 </div>
                                 <div class="showcase-img">
                                     <a href="filter/{{ $brand->brand }}"> <img src="{{ $brand->brand_main_image_path }}"
